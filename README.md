@@ -1,4 +1,14 @@
-# Welcome to your Expo app 👋
+# Welcome to AniKeep 👋
+
+**Imagine having a comprehensive digital archive of every anime series and manga you've ever encountered**. Our mobile application makes this a reality, offering a user-friendly platform to meticulously record your viewing and reading history. From the latest seasonal anime to classic manga volumes, keep it all neatly organized at your fingertips. But the adventure doesn't stop there. Unleash your inner explorer and discover a wealth of new anime and manga just waiting to be unearthed. Browse by genre, popularity, studio, author, and more, with personalized recommendations designed to ignite your passion for Japanese animation and comics.
+
+
+![S1](./ReadmeImages/Screenshot_1744039997.png)
+![S1](./ReadmeImages/Screenshot_1744040379.png)
+![S1](./ReadmeImages/Screenshot_1744040644.png)
+![S1](./ReadmeImages/Screenshot_1744040650.png)
+
+
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
