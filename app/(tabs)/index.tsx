@@ -1,74 +1,95 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { View, Text, ActivityIndicator, Image, FlatList } from "react-native";
+import { useRouter } from "expo-router";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { fetchAnime, Anime } from "@/services/api";
+import { icons } from "@/constants/icons";
 
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+import SearchBar from "@/components/SearchBar";
+import AnimeCard from "@/components/AnimeCard";
+
+const Index = () => {
+  const router = useRouter();
+
+  const [movies, setMovies] = useState<Anime[]>([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const [error, setError] = useState<string|null>("");
+
+  const loadMovies = async () => {
+    if (loading || !hasMore) return;
+
+    setLoading(true);
+    try {
+      const result = await fetchAnime({ query: "", page });
+      if (result.length === 0) {
+        setHasMore(false);
+      } else {
+        setMovies((prev: Anime[]) => [...prev, ...result]);
+      }
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadMovies();
+  }, [page]);
+
+  const handleEndReached = () => {
+    if (hasMore && !loading) {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const renderHeader = () => (
+    <>
+      <Image source={icons.image} className="w-20 h-20 mt-20 mb-5 mx-auto" />
+      <SearchBar
+        onPress={() => router.push("/search")}
+        placeholder="Search for anime"
+        autofocus={false}
+      />
+      <Text className="text-lg dark:text-white font-bold mt-5 mb-3">
+        Latest Movies
+      </Text>
+    </>
   );
-}
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+  const renderFooter = () =>
+    loading ? (
+      <ActivityIndicator size="large" className="my-5" color="#fff" />
+    ) : null;
+
+  return (
+    <View className="flex-1 dark:bg-primary bg-white px-5 pt-10">
+      {error ? (
+        <Text className="text-red-500">Error: {error}</Text>
+      ) : (
+        <FlatList
+          data={movies}
+          ListHeaderComponent={renderHeader}
+          ListFooterComponent={renderFooter}
+          renderItem={({ item }) => <AnimeCard {...item} />}
+          keyExtractor={(item) => item.mal_id.toString()}
+          numColumns={3}
+          columnWrapperStyle={{
+            justifyContent: "flex-start",
+            gap: 20,
+            paddingRight: 5,
+            marginBottom: 10,
+          }}
+          onEndReached={handleEndReached}
+          onEndReachedThreshold={0.5}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 60 }}
+        />
+      )}
+    </View>
+  );
+};
+
+export default Index;

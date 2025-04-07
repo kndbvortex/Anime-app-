@@ -5,16 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="978f50f8-f239-45df-b13e-ad6ac1378413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/movie_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/bookmark.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/search.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/animes/[id].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/+not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ExternalLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HapticTab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ParallaxScrollView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedText.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/ThemedText-test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/__snapshots__/ThemedText-test.tsx.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/Colors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useColorScheme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useColorScheme.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useThemeColor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/reset-project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +46,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -45,7 +69,9 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/durande.kamga-nguifo/Documents/Mobile/movie_app&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -54,10 +80,21 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2023.3.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\durande.kamga-nguifo\\Documents\\Mobile\\movie_app\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TypeScript&quot;
+    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\durande.kamga-nguifo\Documents\Mobile\movie_app\app" />
+      <recent name="C:\Users\durande.kamga-nguifo\Documents\Mobile\movie_app\app\animes\(tabs)" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Android" type="ReactNative" factoryName="React Native">
       <working-dir value="$PROJECT_DIR$" />
@@ -89,7 +126,10 @@
       <updated>1743934034062</updated>
       <workItem from="1743934034819" duration="3178000" />
       <workItem from="1743946690183" duration="140000" />
-      <workItem from="1743946843999" duration="1351000" />
+      <workItem from="1743946843999" duration="6160000" />
+      <workItem from="1743953255817" duration="1676000" />
+      <workItem from="1743955116807" duration="574000" />
+      <workItem from="1743955717149" duration="1448000" />
     </task>
     <servers />
   </component>

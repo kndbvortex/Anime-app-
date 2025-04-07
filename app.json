@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "movie_app",
+    "name": "Next Anime",
     "slug": "movie_app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/image.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,9 +13,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/images/image.png",
+        "backgroundColor": "#242A32"
+      },
+      "package": "com.anonymous.movie_app"
     },
     "web": {
       "bundler": "metro",
@@ -27,7 +28,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo1.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -36,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0d5e9b4b-5d39-4da8-ab51-548e424ed6ce"
+      }
     }
   }
 }

@@ -1,0 +1,4 @@
+### List of users
+GET https://api.themoviedb.org/3/search/movie?query=manga?sort_by=popularity.desc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Mjk1NmVkNDlhZDRlMjZmZmFiYjY0ZTcwOTQzNDg4NyIsIm5iZiI6MTc0Mzk2NjE0Mi42MzYsInN1YiI6IjY3ZjJjZmJlZGRmOTE5NDM4N2Q5NDQxMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OVEZmceEQ6-J7Zf5QrFG3Z6O4gtNrc3aSKfAv25dP8c
